@@ -217,7 +217,7 @@ public class GifDrawable extends Drawable implements Animatable, MediaPlayerCont
 	 * @param options                    Options controlling various GIF parameters.
 	 * @throws IOException if input source is invalid.
 	 */
-	protected GifDrawable(@NonNull InputSource inputSource,
+	public GifDrawable(@NonNull InputSource inputSource,
 	                      @Nullable GifDrawable oldDrawable,
 	                      @Nullable ScheduledThreadPoolExecutor executor,
 	                      boolean isRenderingTriggeredOnDraw,
@@ -226,7 +226,7 @@ public class GifDrawable extends Drawable implements Animatable, MediaPlayerCont
 		this(inputSource.createHandleWith(options), oldDrawable, executor, isRenderingTriggeredOnDraw);
 	}
 
-	GifDrawable(GifInfoHandle gifInfoHandle, final GifDrawable oldDrawable, ScheduledThreadPoolExecutor executor, boolean isRenderingTriggeredOnDraw) {
+	public GifDrawable(GifInfoHandle gifInfoHandle, final GifDrawable oldDrawable, ScheduledThreadPoolExecutor executor, boolean isRenderingTriggeredOnDraw) {
 		mIsRenderingTriggeredOnDraw = isRenderingTriggeredOnDraw;
 		mExecutor = executor != null ? executor : GifRenderingExecutor.getInstance();
 		mNativeInfoHandle = gifInfoHandle;
