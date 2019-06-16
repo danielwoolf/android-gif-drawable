@@ -40,7 +40,7 @@ public final class GifInfoHandle {
 		gifInfoPtr = openFileDescriptor(fileDescriptor, 0, true);
 	}
 
-	GifInfoHandle(byte[] bytes) throws GifIOException {
+	public GifInfoHandle(byte[] bytes) throws GifIOException {
 		gifInfoPtr = openByteArray(bytes);
 	}
 

@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-final class GifViewUtils {
+public final class GifViewUtils {
 	static final String ANDROID_NS = "http://schemas.android.com/apk/res/android";
 	static final List<String> SUPPORTED_RESOURCE_TYPE_NAMES = Arrays.asList("raw", "drawable", "mipmap");
 

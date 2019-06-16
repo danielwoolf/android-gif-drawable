@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 import android.view.View;
 
-class GifViewSavedState extends View.BaseSavedState {
+public class GifViewSavedState extends View.BaseSavedState {
 
 	final long[][] mStates;
 
