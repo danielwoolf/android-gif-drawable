@@ -22,7 +22,7 @@ import java.nio.ByteBuffer;
 /**
  * Native library wrapper
  */
-final class GifInfoHandle {
+public final class GifInfoHandle {
 	static {
 		LibraryLoader.loadLibrary();
 	}
