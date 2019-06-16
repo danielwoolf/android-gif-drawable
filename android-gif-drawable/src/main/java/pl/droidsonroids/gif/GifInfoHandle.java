@@ -33,10 +33,10 @@ public final class GifInfoHandle {
 	 */
 	private volatile long gifInfoPtr;
 
-	GifInfoHandle() {
+	public GifInfoHandle() {
 	}
 
-	GifInfoHandle(FileDescriptor fileDescriptor) throws GifIOException {
+	public GifInfoHandle(FileDescriptor fileDescriptor) throws GifIOException {
 		gifInfoPtr = openFileDescriptor(fileDescriptor, 0, true);
 	}
 
@@ -44,22 +44,22 @@ public final class GifInfoHandle {
 		gifInfoPtr = openByteArray(bytes);
 	}
 
-	GifInfoHandle(ByteBuffer buffer) throws GifIOException {
+	public GifInfoHandle(ByteBuffer buffer) throws GifIOException {
 		gifInfoPtr = openDirectByteBuffer(buffer);
 	}
 
-	GifInfoHandle(String filePath) throws GifIOException {
+	public GifInfoHandle(String filePath) throws GifIOException {
 		gifInfoPtr = openFile(filePath);
 	}
 
-	GifInfoHandle(InputStream stream) throws GifIOException {
+	public GifInfoHandle(InputStream stream) throws GifIOException {
 		if (!stream.markSupported()) {
 			throw new IllegalArgumentException("InputStream does not support marking");
 		}
 		gifInfoPtr = openStream(stream);
 	}
 
-	GifInfoHandle(AssetFileDescriptor afd) throws IOException {
+	public GifInfoHandle(AssetFileDescriptor afd) throws IOException {
 		try {
 			gifInfoPtr = openFileDescriptor(afd.getFileDescriptor(), afd.getStartOffset(), false);
 		} finally {
